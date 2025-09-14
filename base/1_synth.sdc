@@ -1,7 +1,7 @@
 # adder.sdc
  
 # 1. 时钟定义: 周期为2ns (500MHz)
-create_clock -name CLK -period 2.0 [get_ports clk]
+create_clock -name CLK -period 1.5 [get_ports clk]
  
 # 2. 时钟不确定性
 set_clock_uncertainty 0.1 [get_clocks CLK]

@@ -5,7 +5,7 @@ current_design adder
 ###############################################################################
 # Timing Constraints
 ###############################################################################
-create_clock -name CLK -period 2.0000 [get_ports {clk}]
+create_clock -name CLK -period 1.5000 [get_ports {clk}]
 set_clock_uncertainty 0.1000 CLK
 set_input_delay 0.8000 -clock [get_clocks {CLK}] -add_delay [get_ports {a[0]}]
 set_input_delay 0.8000 -clock [get_clocks {CLK}] -add_delay [get_ports {a[1]}]
