@@ -1,0 +1,151 @@
+{
+  "creator": "Yosys 0.57 (git sha1 3aca86049, g++ 13.3.0-6ubuntu2~24.04 -fPIC -O3)",
+  "modules": {
+    "adder": {
+      "attributes": {
+        "src": "./designs/my_adder//adder.v:2.1-18.10",
+        "top": "00000000000000000000000000000001",
+        "hdlname": "adder"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst_n": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "a": {
+          "direction": "input",
+          "bits": [ 4, 5, 6, 7 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 8, 9, 10, 11 ]
+        },
+        "sum": {
+          "direction": "output",
+          "bits": [ 12, 13, 14, 15, 16 ]
+        }
+      },
+      "cells": {
+        "$auto$alumacc.cc:495:replace_alu$5478": {
+          "hide_name": 1,
+          "type": "$alu",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "./designs/my_adder//adder.v:14.14-14.19"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "BI": "input",
+            "CI": "input",
+            "CO": "output",
+            "X": "output",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8, 9, 10, 11 ],
+            "B": [ 4, 5, 6, 7 ],
+            "BI": [ "0" ],
+            "CI": [ "0" ],
+            "CO": [ 17, 18, 19, 20, 21 ],
+            "X": [ 22, 23, 24, 25, 26 ],
+            "Y": [ 27, 28, 29, 30, 31 ]
+          }
+        },
+        "$procdff$5477": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "./designs/my_adder//adder.v:10.3-16.6"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 27, 28, 29, 30, 31 ],
+            "Q": [ 12, 13, 14, 15, 16 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\sum[4:0]": {
+          "hide_name": 1,
+          "bits": [ 27, 28, 29, 30, 31 ],
+          "attributes": {
+            "src": "./designs/my_adder//adder.v:10.3-16.6"
+          }
+        },
+        "$auto$alumacc.cc:511:replace_alu$5479": {
+          "hide_name": 1,
+          "bits": [ 22, 23, 24, 25, 26 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3 4"
+          }
+        },
+        "$auto$alumacc.cc:512:replace_alu$5480": {
+          "hide_name": 1,
+          "bits": [ 17, 18, 19, 20, 21 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3 4"
+          }
+        },
+        "a": {
+          "hide_name": 0,
+          "bits": [ 4, 5, 6, 7 ],
+          "attributes": {
+            "src": "./designs/my_adder//adder.v:5.16-5.17"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 8, 9, 10, 11 ],
+          "attributes": {
+            "src": "./designs/my_adder//adder.v:6.16-6.17"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "./designs/my_adder//adder.v:3.16-3.19"
+          }
+        },
+        "rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "./designs/my_adder//adder.v:4.16-4.21"
+          }
+        },
+        "sum": {
+          "hide_name": 0,
+          "bits": [ 12, 13, 14, 15, 16 ],
+          "attributes": {
+            "src": "./designs/my_adder//adder.v:7.20-7.23"
+          }
+        }
+      }
+    }
+  }
+}
